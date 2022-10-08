@@ -1,5 +1,4 @@
 const weatherButton = document.getElementById('weather')
-const weatherDiv = document.getElementById('weatherinfo')
 
 // Function to fetch information through an async/await mechanism
 async function getWeatherData() {
@@ -19,20 +18,16 @@ async function getWeatherData() {
 async function component() {
     const weatherData = await getWeatherData();
 
-    const element = await document.createElement('div');
-    element.className = await 'weatherinfo';
-    element.textContent = await `
-        The weather right now in your location is as follows: \n
-        Temperature: ${(weatherData.temperature - 273.15)} \n
-        Weather: ${weatherData.weather} \n
-        Wind: ${weatherData.wind} \n
-        Don't forget to go outside for a walk whenever your mental health is in trouble.
-    `
+    const element = document.createElement('div');
+    element.className = 'weatherinfo';
+    element.innerHTML = `<div class="hero"><h2>The weather right now in your location is as follows:</h2>
+        <div class="temp"><h3>Temperature: ${(weatherData.temperature - 273.15).toFixed(1)} °C </h3></div>
+        <div class="weather"><h3>Weather: ${weatherData.weather}</h3></div>
+        <div class="wind"><h3>Wind: ${weatherData.wind} m/s</h3></div>
+        <h4><i>Go outside for a walk whenever you feel like you need to manage your mental health.</i></h4></div>`
     return element;
 }
 
 weatherButton.addEventListener('click', async function appendComponent() {
-    koko = await component()
-    console.log(koko)
-    weatherDiv.appendChild(koko)
+    document.body.appendChild(await component())
 })
