@@ -1,4 +1,5 @@
 const weatherButton = document.getElementById('weather')
+const reloadButton = document.getElementById('reload')
 
 // Function to fetch information through an async/await mechanism
 async function getWeatherData() {
@@ -31,4 +32,8 @@ async function component() {
 
 weatherButton.addEventListener('click', async function appendComponent() {
     document.body.appendChild(await component())
+})
+
+reloadButton.addEventListener('click', (e) => {
+    window.location.href = 'index.html'
 })

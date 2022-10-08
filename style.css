@@ -1,4 +1,4 @@
-#city, #weather {
+#city, #weather, #reload {
     top: 10%;
     left: 10%;
     margin: 5px;
@@ -8,13 +8,13 @@
     border-radius: 2px;
 }
 
-#weather {
+#weather, #reload {
     border-radius: 5px;
     width: 160px;
     height: 30px;
 }
 
-#weather:hover {
+#weather:hover, #reload:hover {
     cursor: pointer;
 }
 
