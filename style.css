@@ -1,0 +1,24 @@
+#city, #weather {
+    top: 10%;
+    left: 10%;
+    margin: 5px;
+}
+
+#city {
+    border-radius: 2px;
+}
+
+#weather {
+    border-radius: 5px;
+    width: 160px;
+    height: 30px;
+}
+
+#weather:hover {
+    cursor: pointer;
+}
+
+.weatherinfo {
+    background-color: aliceblue;
+    font-family: sans-serif;
+}
